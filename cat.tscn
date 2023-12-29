@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d3ricrmjkk7d"]
+[gd_scene load_steps=26 format=3 uid="uid://d3ricrmjkk7d"]
 
 [ext_resource type="Texture2D" uid="uid://b5cwjruhreuey" path="res://Sprites/mycat.png" id="1_wpkdt"]
 
@@ -82,6 +82,18 @@ region = Rect2(450, 200, 50, 50)
 atlas = ExtResource("1_wpkdt")
 region = Rect2(400, 200, 50, 50)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0raj"]
+atlas = ExtResource("1_wpkdt")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dggo8"]
+atlas = ExtResource("1_wpkdt")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wynl4"]
+atlas = ExtResource("1_wpkdt")
+region = Rect2(200, 0, 50, 50)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_v2mle"]
 animations = [{
 "frames": [{
@@ -159,6 +171,23 @@ animations = [{
 "loop": true,
 "name": &"kickattack",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0raj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dggo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wynl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dggo8")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="Sprite" type="Node2D"]
@@ -166,6 +195,5 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_v2mle")
-animation = &"kickattack"
-frame = 2
-frame_progress = 0.607076
+animation = &"new_animation"
+frame_progress = 0.671532

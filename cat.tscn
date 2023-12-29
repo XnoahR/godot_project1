@@ -163,17 +163,9 @@ animations = [{
 
 [node name="Sprite" type="Node2D"]
 
-[node name="Player" type="Sprite2D" parent="."]
-position = Vector2(214, 216)
-scale = Vector2(5.15854, 4.96341)
-texture = ExtResource("1_wpkdt")
-hframes = 10
-vframes = 6
-frame = 21
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(608, 355)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_v2mle")
 animation = &"kickattack"
-frame_progress = 0.409382
+frame = 2
+frame_progress = 0.607076

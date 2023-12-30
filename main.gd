@@ -1,16 +1,20 @@
 extends Node2D
 
-var character
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	character = $cat
-	var myCatPosX = get_node("cat").position.x
-	get_node("cat2").position = Vector2(300,250)
-	$cat.scale.x = 2.5 #alternate use of get_node
-	print(myCatPosX)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	character.position.x += 125*delta
+var cat
+func _ready() -> void :
+	cat = $cat
 	pass
+	
+
+func _process(delta) -> void:
+	
+	pass
+
+
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		match event.keycode:
+			KEY_D:
+				print("Move Right")
+			KEY_A:
+				print("Move Left")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d3ricrmjkk7d"]
+[gd_scene load_steps=27 format=3 uid="uid://d3ricrmjkk7d"]
 
 [ext_resource type="Texture2D" uid="uid://b5cwjruhreuey" path="res://Sprites/mycat.png" id="1_wpkdt"]
 
@@ -190,10 +190,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Sprite" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h13oq"]
+radius = 41.0
+height = 164.0
+
+[node name="cat" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_v2mle")
 animation = &"new_animation"
 frame_progress = 0.671532
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 5)
+shape = SubResource("CapsuleShape2D_h13oq")
+debug_color = Color(0, 0.6, 0.701961, 0.0313726)

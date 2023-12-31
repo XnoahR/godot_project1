@@ -1,16 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://bckem1mar2gwh"]
+[gd_scene load_steps=11 format=3 uid="uid://bckem1mar2gwh"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_sjj55"]
 [ext_resource type="Script" path="res://scripts/cat.gd" id="2_y4332"]
 [ext_resource type="PackedScene" uid="uid://d3ricrmjkk7d" path="res://cat.tscn" id="3_75gkc"]
 [ext_resource type="Texture2D" uid="uid://xs85lil8kwh1" path="res://Background/ground.png" id="4_7q1a2"]
 [ext_resource type="Texture2D" uid="uid://c8dl1dw0n27ax" path="res://icon.svg" id="4_iyj2j"]
+[ext_resource type="Texture2D" uid="uid://cefk0hmlrrcoy" path="res://Background/iceRock.png" id="6_hdh7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w0t3k"]
 size = Vector2(100, 99)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6at3"]
 size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jradi"]
+size = Vector2(46, 508)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6bje3"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sjj55")
@@ -69,3 +75,27 @@ texture = ExtResource("4_iyj2j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Godot"]
 shape = SubResource("RectangleShape2D_i6at3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(282, 333)
+
+[node name="IceRock" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(0.1, 1)
+texture = ExtResource("6_hdh7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_jradi")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(645, 333)
+physics_material_override = SubResource("PhysicsMaterial_6bje3")
+constant_linear_velocity = Vector2(0, -250)
+
+[node name="IceRock" type="Sprite2D" parent="StaticBody2D2"]
+scale = Vector2(0.1, 1)
+texture = ExtResource("6_hdh7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_jradi")
